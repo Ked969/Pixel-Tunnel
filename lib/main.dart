@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart'; 
 import 'models/stroke.dart';
 import 'painter.dart';
 import 'cloud_manager.dart';
@@ -6,6 +7,19 @@ import 'color_picker_painter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyBOqEnbc7rSFuzVKriTkD8xlLS0znJ1a2o",
+      authDomain: "ked969-ehe.firebaseapp.com",
+      databaseURL: "https://ked969-ehe-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "ked969-ehe",
+      storageBucket: "ked969-ehe.firebasestorage.app",
+      messagingSenderId: "739390289112",
+      appId: "1:739390289112:web:54eeb239a3f8520a1093ad",
+    ),
+  );
   runApp(const MyApp());
 }
 
